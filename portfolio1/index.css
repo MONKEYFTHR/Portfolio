@@ -1,0 +1,408 @@
+body{
+  margin: 0;
+  padding: 0;
+  float: none;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+* {box-sizing:border-box}
+
+hr{
+   height: 12px;
+   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+div{
+  width: 100%;
+}
+.topnav {
+  background-color: black;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 30px;
+}
+.topnav a:hover {
+  background-color: crimson;
+  color: black;
+  text-decoration: underline;
+}
+/*RESPONSIVE*/
+@media screen and (max-width: 700px) {
+  .topnav{
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .topnav a{
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .topnav a{
+    text-align: center;
+    float: none;
+  }
+}
+/*RESPONSIVE*/
+/*FEUEUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU*/
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50%,
+  90% {
+    transform: scaleY(1.1);
+  }
+  75% {
+    transform: scaleY(0.95);
+  }
+  80% {
+    transform: scaleX(0.95);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: skewX(0) scale(1);
+  }
+  50% {
+    transform: skewX(5deg) scale(0.9);
+  }
+}
+
+@keyframes particleUp {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    background-color: #ef5a00;
+  }
+  50% {
+    background-color: #ff7800;
+  }
+}
+
+.fire {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  margin-top: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fire-main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: scaleUpDown 3s ease-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-main .main-fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(farthest-corner at 10px 0, crimson 0%, crimson 95%);
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-main .particle-fire {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 10px;
+  height: 10px;
+  background-color: #ef5a00;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #d43322);
+  animation: particleUp 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation: shake 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right .main-fire {
+  position: absolute;
+  top: 15%;
+  right: -25%;
+  width: 80%;
+  height: 80%;
+  background-color: crimson;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-right .particle-fire {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: crimson;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px crimson);
+  animation: particleUp 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shake 3s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left .main-fire {
+  position: absolute;
+  top: 15%;
+  left: -20%;
+  width: 80%;
+  height: 80%;
+  background-color: crimson;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-left .particle-fire {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 10%;
+  height: 10%;
+  background-color: #ef5a00;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #d43322);
+  animation: particleUp 3s infinite ease-out 0;
+  animation-fill-mode: both;
+}
+
+.fire-bottom .main-fire {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 75%;
+  height: 75%;
+  background-color: #ff7800;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 100% 40%;
+  filter: blur(10px);
+  animation: glow 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+/*FEUEUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU*/
+
+
+
+#whoiam{
+  color: white;
+}
+#whoiam p{
+  font-size: 24px;
+}
+
+
+.conteniendre {
+  width: 100%;
+  background-color: darkgray;
+}
+
+.skills {
+  text-align: right;
+  padding: 10px;
+  color: white;
+}
+
+.html {width: 70%; background-color: crimson;}
+.css {width: 70%; background-color: crimson;}
+.js {width: 50%; background-color: crimson;}
+.php {width: 50%; background-color: crimson;}
+.c {width: 60%; background-color: crimson;}
+.sql {width: 55%; background-color: crimson;}
+
+
+.legrostitresamere h1{
+  text-align: center;
+}
+.animationcss3 p{
+  display: inline-block;
+  transition-duration: 0.5s;
+  transition-property: transform;
+
+}
+.animationcss3 p:hover{
+  transform: translateY(20px);
+}
+.liens a{
+  text-decoration: none;
+  font-size: 36px;
+  color: crimson;
+}
+
+.omgmonlevel {
+	height: 20px;
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+footer{
+  height: 260px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+footer a{
+  padding-top: 100px;
+  display: inline-block;
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
+}
+.container {
+  position: relative;
+  background-color: crimson;
+  background-position: center;
+  background-size: cover;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.1;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+.tuxt {
+  font-size: 36px;
+  padding: 16px 32px;
+}
+@media screen and (max-width: 700px) {
+  .tuxt{
+    text-align: center;
+    float: none;
+    font-size: 18px;
+  }
+}
+  @media screen and (max-width: 400px) {
+    .tuxt{
+      text-align: center;
+      float: none;
+      font-size: 8px;
+    }
+  }
+.passion{
+  color: white;
+}
+/*CONTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACT*/
+input[type=text], select, textarea {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: black;
+  color: white;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 5px solid black;
+}
+
+input[type=submit]:hover {
+  background-color: crimson;
+  color: black;
+  border: 5px solid black;
+}
+
+.formulaire {
+  border-radius: 5px;
+  background-color: crimson;
+  padding: 20px;
+}
+/*CONTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACT*/
