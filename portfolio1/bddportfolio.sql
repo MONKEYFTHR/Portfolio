@@ -15,4 +15,4 @@ CREATE TABLE article(
 	nom varchar(50),
 	content varchar(1000)
 );
-INSERT INTO MVC(pass) VALUES('Jean'); 
+INSERT INTO MVC(pass) VALUES('Q22pj6rbC42gX2nP8LQg'); 
