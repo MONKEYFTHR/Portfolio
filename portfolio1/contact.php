@@ -11,7 +11,7 @@
      <a href="index.php#">Présentation</a>
      <a href="index.php#talents">Talents</a>
      <a style="float: right;" href="contact.php">Me contacter</a>
-     <a style="float: right;" href="activités.php">Activités</a>
+     <a style="float: right;" href="activités.html">Activités</a>
    </div>
    <div class="fire">
      <div class="fire-left">
