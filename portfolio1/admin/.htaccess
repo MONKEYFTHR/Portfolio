@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Access to /admin"
+AuthUserFile /kunden/homepages/26/d789031843/htpasswd
+Require user Admin
