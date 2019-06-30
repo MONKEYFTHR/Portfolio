@@ -1,0 +1,8 @@
+<Files db.ini>
+Order allow,deny
+Deny from all
+</Files>
+<Files bddportfolio.sql>
+Order allow,deny
+Deny from all
+</Files>
